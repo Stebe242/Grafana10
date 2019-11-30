@@ -35,10 +35,10 @@ RUN apk add --no-cache libc6-compat \
 # grafana-cli plugins install agenty-flowcharting-panel \
 # grafana-cli plugins install jdbranham-diagram-panel \
 
-COPY docker/grafana/run.sh ./run.sh
-COPY docker/grafana/provisioning $GF_PATHS_PROVISIONING
-COPY docker/grafana/dashboards /var/lib/grafana/dashboards
-COPY docker/grafana/grafana.ini /etc/grafana/grafana.ini
+COPY run.sh ./run.sh
+COPY provisioning $GF_PATHS_PROVISIONING
+COPY dashboards /var/lib/grafana/dashboards
+COPY grafana.ini /etc/grafana/grafana.ini
 
 USER nobody
 EXPOSE 3000/tcp
