@@ -14,7 +14,7 @@ ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
 WORKDIR /usr/src/app
 
 RUN apk add --no-cache libc6-compat \
- && apk add --no-cache --virtual build-dependencies curl ca-certificates \
+ && apk add --no-cache --virtual build-dependencies curl \
  && curl -sL https://dl.grafana.com/oss/release/grafana-$VERSION.linux-amd64.tar.gz -o /tmp/grafana-$VERSION-linux-amd64.tar.gz \
  && tar xzvf /tmp/grafana-${VERSION}-linux-amd64.tar.gz -C $GF_PATHS_HOME --strip-components=1 \
  && ln -s $GF_PATHS_HOME/bin/grafana-cli /usr/local/bin \
