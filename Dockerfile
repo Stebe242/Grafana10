@@ -1,6 +1,5 @@
 FROM alpine:3.10.3
 MAINTAINER Sebastian Braun <sebastian.braun@fh-aachen.de>
-RUN apk add --no-cache ca-certificates
 # base alpine template
 
 ARG VERSION=6.5.1
