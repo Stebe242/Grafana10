@@ -1,34 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_LUCAS-NÜLLE_FACTORY",
-      "label": "Lucas-Nülle Factory",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "influxdb",
-      "pluginName": "InfluxDB"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "5.1.4"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": "5.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "influxdb",
-      "name": "InfluxDB",
-      "version": "5.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -45,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
   "iteration": 1581198951036,
   "links": [],
   "panels": [
@@ -54,7 +23,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_LUCAS-NÜLLE_FACTORY}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "gridPos": {
         "h": 10,
@@ -103,7 +72,7 @@
           ],
           "measurement": "power",
           "orderByTime": "ASC",
-          "policy": "auto",
+          "policy": "default",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -216,7 +185,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_LUCAS-NÜLLE_FACTORY}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -333,7 +302,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_LUCAS-NÜLLE_FACTORY}",
+        "datasource": "InfluxDB",
         "hide": 0,
         "includeAll": false,
         "label": null,
