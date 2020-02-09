@@ -2,7 +2,7 @@ FROM alpine:3.11.3
 MAINTAINER Sebastian Braun <sebastian.braun@fh-aachen.de>
 # base alpine template
 
-ARG VERSION=6.5.3
+ARG VERSION=6.6.1
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
