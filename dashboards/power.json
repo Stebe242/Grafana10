@@ -233,7 +233,7 @@
           ],
           "measurement": "CoAP",
           "orderByTime": "ASC",
-          "policy": "auto",
+          "policy": "default",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
