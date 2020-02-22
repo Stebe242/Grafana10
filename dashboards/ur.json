@@ -1395,12 +1395,6 @@
           "groupBy": [
             {
               "params": [
-                "24h"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
                 "position"
               ],
               "type": "tag"
@@ -1435,7 +1429,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": "24h",
+      "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
       "title": "Waypoints",
@@ -1478,7 +1472,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -1512,8 +1506,12 @@
       }
     ]
   },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
   "timepicker": {
-    "hidden": true,
+    "hidden": false,
     "refresh_intervals": [
       "5s",
       "10s"
@@ -1522,5 +1520,5 @@
   "timezone": "",
   "title": "Universal Robots",
   "uid": "L2Z8pQQZz",
-  "version": 15
+  "version": 17
 }
