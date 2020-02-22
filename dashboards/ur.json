@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1582383056866,
+  "iteration": 1582397334416,
   "links": [],
   "panels": [
     {
@@ -40,7 +39,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 0,
         "y": 0
@@ -146,7 +145,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 4,
         "y": 0
@@ -252,7 +251,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 8,
         "y": 0
@@ -358,7 +357,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 12,
         "y": 0
@@ -464,7 +463,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 16,
         "y": 0
@@ -570,7 +569,7 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 20,
         "y": 0
@@ -667,7 +666,7 @@
         "h": 11,
         "w": 8,
         "x": 0,
-        "y": 3
+        "y": 2
       },
       "hiddenSeries": false,
       "id": 4,
@@ -888,7 +887,7 @@
         "h": 11,
         "w": 8,
         "x": 8,
-        "y": 3
+        "y": 2
       },
       "hiddenSeries": false,
       "id": 6,
@@ -1109,7 +1108,7 @@
         "h": 11,
         "w": 8,
         "x": 16,
-        "y": 3
+        "y": 2
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1359,10 +1358,10 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 15,
@@ -1480,11 +1479,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "selected": true,
-          "text": "localhost",
-          "value": "localhost"
-        },
         "datasource": "InfluxDB",
         "definition": "SHOW TAG VALUES FROM \"universal_robots\" WITH key=address",
         "hide": 0,
@@ -1507,7 +1501,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -1520,5 +1514,5 @@
   "timezone": "",
   "title": "Universal Robots",
   "uid": "L2Z8pQQZz",
-  "version": 17
+  "version": 18
 }
