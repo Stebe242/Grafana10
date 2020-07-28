@@ -2,7 +2,7 @@ ARG UBUNTU=rolling
 FROM ubuntu:$UBUNTU as basestage
 ARG TARGETPLATFORM
 
-ARG VERSION=7.0.3
+ARG VERSION=7.1.1
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
