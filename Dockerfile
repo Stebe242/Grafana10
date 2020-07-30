@@ -15,7 +15,7 @@ WORKDIR /usr/src/app
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y -q \
     ca-certificates \
     curl \
- && curl -sL https://dl.grafana.com/oss/release/grafana-$VERSION.linux-$(echo $TARGETPLATFORM | sed 's/linux\///').tar.gz -o /tmp/grafana.tar.gz \
+ && curl -sL https://dl.grafana.com/oss/release/grafana-$VERSION.linux-$(echo $TARGETPLATFORM | sed 's/\/v7/v7/' | sed 's/linux\///').tar.gz -o /tmp/grafana.tar.gz \
  && tar xzvf /tmp/grafana.tar.gz -C $GF_PATHS_HOME --strip-components=1 \
  && ln -s $GF_PATHS_HOME/bin/grafana-cli /usr/local/bin \
  && ln -s $GF_PATHS_HOME/bin/grafana-server /usr/local/bin \
