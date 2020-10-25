@@ -1,8 +1,13 @@
 ARG UBUNTU=rolling
-FROM ubuntu:$UBUNTU as basestage
+FROM ubuntu:$UBUNTU
+MAINTAINER Sebastian Braun <sebastian.braun@fh-aachen.de>
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV LANG en_US.utf8
+
 ARG TARGETPLATFORM
 
-ARG VERSION=7.1.1
+ARG VERSION=7.2.2
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
@@ -12,7 +17,7 @@ ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
 
 WORKDIR /usr/src/app
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y -q \
+RUN apt-get update && apt-get install --no-install-recommends -y -q \
     ca-certificates \
     curl \
  && curl -sL https://dl.grafana.com/oss/release/grafana-$VERSION.linux-$(echo $TARGETPLATFORM | sed 's/\/v7/v7/' | sed 's/linux\///').tar.gz -o /tmp/grafana.tar.gz \
