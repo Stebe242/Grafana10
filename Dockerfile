@@ -1,13 +1,14 @@
+# vim:set ft=dockerfile:
 ARG UBUNTU=rolling
 FROM ubuntu:$UBUNTU
 MAINTAINER Sebastian Braun <sebastian.braun@fh-aachen.de>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV LANG en_US.utf8
+ENV LANG en_US.UTF-8
 
 ARG TARGETPLATFORM
 
-ARG VERSION=7.2.2
+ARG VERSION=7.3.4
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
@@ -26,7 +27,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q \
  && ln -s $GF_PATHS_HOME/bin/grafana-server /usr/local/bin \
  && rm -rf /tmp/grafana.tar.gz \
  && mkdir -p $GF_PATHS_PLUGINS $GF_PATHS_DATA \
- && grafana-cli plugins install grafana-piechart-panel \
  && chown -R nobody:nogroup $GF_PATHS_DATA $GF_PATHS_PLUGINS \
  && chmod 777 $GF_PATHS_DATA $GF_PATHS_PLUGINS \
  && apt-get remove --purge --autoremove -y -q \
@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/
 
+# grafana-cli plugins install grafana-piechart-panel \
 # grafana-cli plugins install grafana-simple-json-datasource \
 # grafana-cli plugins install blackmirror1-singlestat-math-panel \
 # grafana-cli plugins install snuids-trafficlights-panel \
@@ -44,7 +45,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q \
 # grafana-cli plugins install agenty-flowcharting-panel \
 # grafana-cli plugins install jdbranham-diagram-panel \
 
-COPY run.sh ./run.sh
+COPY entrypoint.sh /entrypoint.sh
 COPY provisioning $GF_PATHS_PROVISIONING
 COPY dashboards /var/lib/grafana/dashboards
 COPY grafana.ini /etc/grafana/grafana.ini
@@ -53,4 +54,5 @@ USER nobody
 EXPOSE 3000/tcp
 VOLUME /data
 
-ENTRYPOINT [ "./run.sh" ]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["grafana-server"]
