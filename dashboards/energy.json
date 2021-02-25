@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1607263294609,
+  "iteration": 1614243362905,
   "links": [],
   "panels": [
     {
@@ -74,7 +74,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "7.3.4",
+      "pluginVersion": "7.3.7",
       "targets": [
         {
           "groupBy": [],
@@ -167,7 +167,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "7.3.4",
+      "pluginVersion": "7.3.7",
       "targets": [
         {
           "groupBy": [],
@@ -260,7 +260,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "7.3.4",
+      "pluginVersion": "7.3.7",
       "targets": [
         {
           "groupBy": [],
@@ -320,6 +320,7 @@
       },
       "hiddenSeries": false,
       "id": 2,
+      "interval": "100ms",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -339,7 +340,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.4",
+      "pluginVersion": "7.3.7",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -365,7 +366,7 @@
           "groupBy": [
             {
               "params": [
-                "1s"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -429,7 +430,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": "15m",
+      "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
       "title": "Energy measurement of $Device",
@@ -496,7 +497,7 @@
       "hiddenSeries": false,
       "hideTimeOverride": false,
       "id": 16,
-      "interval": "",
+      "interval": "100ms",
       "legend": {
         "alignAsTable": false,
         "avg": true,
@@ -514,7 +515,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.4",
+      "pluginVersion": "7.3.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -592,7 +593,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": "15m",
+      "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
       "title": "Motor direction",
@@ -641,8 +642,7 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-        },
+        "current": null,
         "datasource": "InfluxDB",
         "definition": "SHOW TAG VALUES FROM \"energy\" WITH key=address",
         "error": null,
@@ -666,7 +666,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
