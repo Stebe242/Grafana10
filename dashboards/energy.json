@@ -642,7 +642,8 @@
     "list": [
       {
         "allValue": null,
-        "current": null,
+        "current": {
+        },
         "datasource": "InfluxDB",
         "definition": "SHOW TAG VALUES FROM \"energy\" WITH key=address",
         "error": null,
