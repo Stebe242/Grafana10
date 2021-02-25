@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1614243362905,
+  "iteration": 1614243362913,
   "links": [],
   "panels": [
     {
@@ -497,7 +497,7 @@
       "hiddenSeries": false,
       "hideTimeOverride": false,
       "id": 16,
-      "interval": "100ms",
+      "interval": "5s",
       "legend": {
         "alignAsTable": false,
         "avg": true,
@@ -529,7 +529,7 @@
           "groupBy": [
             {
               "params": [
-                "3s"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -672,7 +672,6 @@
   "timepicker": {
     "hidden": false,
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
