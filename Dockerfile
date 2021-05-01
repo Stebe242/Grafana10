@@ -8,7 +8,7 @@ ENV LANG en_US.UTF-8
 
 ARG TARGETPLATFORM
 
-ARG VERSION=7.4.2
+ARG VERSION=7.5.5
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
