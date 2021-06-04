@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q \
     curl \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/ \
- && mkdir -p /var/lib/grafana/dashboards $GF_PATHS_PROVISIONING && mkdir $GF_PATHS_PROVISIONING/dashboards $GF_PATHS_PROVISIONING/datasources $GF_PATHS_PROVISIONING/notifiers
+ && mkdir -p /var/lib/grafana/dashboards $GF_PATHS_PROVISIONING && mkdir $GF_PATHS_PROVISIONING/dashboards $GF_PATHS_PROVISIONING/datasources $GF_PATHS_PROVISIONING/notifiers $GF_PATHS_PROVISIONING/plugins
 
 # grafana-cli plugins install grafana-piechart-panel \
 # grafana-cli plugins install grafana-simple-json-datasource \
