@@ -7,7 +7,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
 
 ARG TARGETPLATFORM
-
 ARG VERSION=7.5.7
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
@@ -32,7 +31,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q \
  && apt-get remove --purge --autoremove -y -q \
     curl \
  && apt-get clean \
- && rm -rf /var/lib/apt/lists/
+ && rm -rf /var/lib/apt/lists/ \
+ && mkdir -p /var/lib/grafana/dashboards $GF_PATHS_PROVISIONING && mkdir $GF_PATHS_PROVISIONING/dashboards $GF_PATHS_PROVISIONING/datasources $GF_PATHS_PROVISIONING/notifiers
 
 # grafana-cli plugins install grafana-piechart-panel \
 # grafana-cli plugins install grafana-simple-json-datasource \
@@ -46,8 +46,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q \
 # grafana-cli plugins install jdbranham-diagram-panel \
 
 COPY entrypoint.sh /entrypoint.sh
-COPY provisioning $GF_PATHS_PROVISIONING
-COPY dashboards /var/lib/grafana/dashboards
+COPY filesystem.yaml $GF_PATHS_PROVISIONING/dashboards/filesystem.yaml
 COPY grafana.ini /etc/grafana/grafana.ini
 
 USER nobody
