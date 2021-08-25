@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
 
 ARG TARGETPLATFORM
-ARG VERSION=8.1.0
+ARG VERSION=8.1.2
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
