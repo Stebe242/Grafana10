@@ -4,10 +4,10 @@ FROM $BASEIMAGE
 MAINTAINER Sebastian Braun <sebastian.braun@fh-aachen.de>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV LANG en_US.UTF-8
+ENV LC_ALL C
 
 ARG TARGETPLATFORM
-ARG VERSION=8.2.2
+ARG VERSION=8.2.5
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
