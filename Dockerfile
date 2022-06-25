@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C
 
 ARG TARGETPLATFORM
-ARG VERSION=8.5.1
+ARG VERSION=8.5.6
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
