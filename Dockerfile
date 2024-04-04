@@ -1,13 +1,13 @@
 # vim:set ft=dockerfile:
 ARG BASEIMAGE=ubuntu:rolling
 FROM $BASEIMAGE
-MAINTAINER Sebastian Braun <sebastian.braun@fh-aachen.de>
+MAINTAINER Stephan Zander
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C
 
 ARG TARGETPLATFORM
-ARG VERSION=9.2.4
+ARG VERSION=10.4.1
 
 ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
     GF_PATHS_DATA="/data" \
